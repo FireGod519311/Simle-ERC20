@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "E:\\selftranining\\dex\\Token\\contracts\\SimpleToken.sol": {
-      "lastModificationDate": 1723387456288,
-      "contentHash": "ef500a5bd2a7b44eb0e23c6a6df05263",
+      "lastModificationDate": 1723397702402,
+      "contentHash": "1435ef9ca0e44d2096ff97a377517390",
       "sourceName": "contracts/SimpleToken.sol",
       "solcConfig": {
         "version": "0.8.24",
@@ -31,13 +31,14 @@
       },
       "imports": [
         "@openzeppelin/contracts/access/Ownable.sol",
-        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
       ],
       "artifacts": [
-        "SimpleToken"
+        "MyToken"
       ]
     },
     "E:\\selftranining\\dex\\Token\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
@@ -117,6 +118,45 @@
       ],
       "artifacts": [
         "ERC20"
+      ]
+    },
+    "E:\\selftranining\\dex\\Token\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\extensions\\ERC20Burnable.sol": {
+      "lastModificationDate": 1723377527791,
+      "contentHash": "273d8d24b06f67207dd5f35c3a0c1086",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC20.sol",
+        "../../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
       ]
     },
     "E:\\selftranining\\dex\\Token\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {

@@ -2,10 +2,14 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
-contract SimpleToken is ERC20, Ownable{
-    constructor() ERC20("My Simple Token", "MST") Ownable(msg.sender){}
-    function mint(address to, uint256 amount) external {
+contract MyToken is ERC20, ERC20Burnable, Ownable {
+    constructor() ERC20("MyToken", "MTK") Ownable(msg.sender){
+        _mint(msg.sender, 1000*10**decimals());
+    }
+
+    function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
