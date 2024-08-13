@@ -1,3 +1,5 @@
+import Wallet from "../components/Wallet"
+
 const HButton = (props) => {
     return (
         <button className="text-gray-300 bg-none text-base uppercase" onClick={props.onclick}>{props.title}</button>
@@ -17,8 +19,8 @@ const Header = () => {
                     <div className="flex justify-end gap-5">
                         <HButton title="Swap" onclick={() => { window.location.href = "/" }}/>
                         <HButton title="Token" onclick={() => { window.location.href = "/token" }}/>
-                        <HButton title="Contact" />
-                        <button>Wallet</button>
+                        <HButton title="Liquidity" onclick={() => { window.location.href = "/liquidity" }}/>
+                        <Wallet/>
                     </div>
                 </div>
             </div>

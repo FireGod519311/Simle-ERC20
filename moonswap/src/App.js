@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import TokenManager from './pages/TokenManager';
 import MainLayout from './layouts/mainlayout';
 import Swap from './pages/Swap';
+import Liquidity from './pages/Liquidity';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element={<MainLayout />} >
               <Route index element={<Swap />} />
               <Route path="token" element={<TokenManager />} />
+              <Route path="liquidity" element={<Liquidity />} />
             </Route>
         </Routes>
       </BrowserRouter>
