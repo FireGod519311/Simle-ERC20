@@ -46,6 +46,22 @@ const TokenManager = () => {
         }
     };
 
+    const handleTransfer = async () => {
+        try {
+            if (!address || !amount) {
+                alert('Please provide a valid address and amount.');
+                return;
+            }
+            const tx = await owner_contract.transfer(address, ethers.utils.parseUnits(amount, 18));
+            await tx.wait();
+            alert('Transfer successful');
+            const updatedBalance = await token_contract.balanceOf(await signer.getAddress());
+            setBalance(ethers.utils.formatUnits(updatedBalance, 18));
+        } catch (error) {
+            console.error("Error transferring tokens:", error);
+        }
+    };
+
     return (
         <div className="text-white">
             <div className="mt-10">
@@ -76,9 +92,13 @@ const TokenManager = () => {
                     </div>
                     <button
                         className="bg-[#2c9986] rounded-md px-3 py-2 min-w-24 text-gray-300 text-xl"
-                        onClick={handleMint}
-                    >
+                        onClick={handleMint}>
                         Mint
+                    </button>
+                    <button
+                        className="bg-[#2c9986] rounded-md px-3 py-2 min-w-24 text-gray-300 text-xl hidden"
+                        onClick={handleTransfer}>
+                        Transfer
                     </button>
                 </div>
             )}
